@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="es" class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6"> <![endif]-->
+<!--[if IE 7 ]><html 	lang="es" class="no-js lt-ie10 lt-ie9 lt-ie8 ie7"> <![endif]-->
+<!--[if IE 8 ]><html 	lang="es" class="no-js lt-ie10 lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9 ]><html 	lang="es" class="no-js lt-ie10 ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="es" class="no-js"><!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="tab icon" href="./favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <title>Workshop</title>
+    <style>
+        h1, h2{
+            text-align: center;
+            margin: 25px auto;
+        }
+        h2{
+            margin-bottom: 25px;
+        }
+        .content-fluid{
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .btn-custom-1{
+            width: 100%;
+            margin: 5px  5px  15px  5px;        
+        }
+        .modificar-datos .form-group{
+            width: calc(50% - 5px);
+            margin-right: 5px;
+            float: left;
+        }
+        .modificar-datos button{
+            width: 50%;
+        }
+        .input-datos input{
+            margin-bottom: 10px;
+        }
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        li{
+            list-style: none;
+            border-bottom: 1px solid #c1c1c1;
+            border-left: 1px solid #c1c1c1;
+            border-right: 1px solid #c1c1c1;
+            padding: 10px;
+        }
+        li:first-child{
+            border-top: 1px solid #c1c1c1;            
+        }
+        h1{
+            text-align: left;
+            margin: 10px auto;
+        }
+        input:focus{
+            outline:0px;
+        }
+    </style>
+
+</head>
+    <body>
+        <div class="content-fluid">
+                <h1>Workshop</h1>
+            <div class="row">
+                <div class="col-lg-6">
+                        <h2>Lista de alumnos</h2>
+                        <ul id="listaAlumnos">
+
+                        </ul>
+                </div>
+                <div class="col-lg-6">
+                    <h2>Ingreso de datos</h2>
+                    <form class="form" id="formulario-alumnos">
+                        <div class="form-row input-datos">                  
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Nombre" id="nombreAlumno">
+                                <input type="number" class="form-control" placeholder="DNI" id="dniAlumno">
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Apellido">
+                                <input type="text" class="form-control" id="emailAlumno" onkeyup="validarEmail()" placeholder="E-mail">
+                            </div>                        
+                            <button type="button" class="btn btn-primary btn-large btn-custom-1" onclick="insertar()" >Agregar alumno</button>         
+                        </div>                            
+                        <div class="modificar-datos">           
+                            <div class="clearfix">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="inputDni" placeholder="DNI">
+                                </div>
+                                <button type="submit" class="btn btn-danger btn-primary  mb-2" onclick="eliminarAlumno()">Eliminar alumno</button>
+                            </div>
+                            <div class="clearfixs">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="buscarNombre" placeholder="Nombre">
+                                </div>
+                                <button type="button" class="btn btn-success btn-primary mb-2" onclick="buscarAlumno()">Buscar alumno</button>
+                            </div>
+                        </div>
+                    </form>
+                    <h1 id="buscarAlumno"></h1>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
